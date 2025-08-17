@@ -141,6 +141,14 @@ footer {
   background: linear-gradient(135deg, #3a7bd5, #00d2ff);
   color: #fff;
   padding: 1.5rem 0;
+
+
+/* Center text in About Me and Contact sections */
+.about-me,
+.contact {
+  text-align: center;
+}
+  
   margin-top: 3rem;
   font-size: 0.95rem;
   letter-spacing: 0.5px;
