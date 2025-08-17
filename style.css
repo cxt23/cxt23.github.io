@@ -88,10 +88,10 @@ header nav a:hover {
 
 /* Pet Grid */
 .pet-list {
-  display: flex;              /* switch from grid to flex for easier centering */
-  flex-wrap: wrap;
-  justify-content: center;    /* center horizontally */
-  gap: 1.8rem;               /* space between items */
+  display: flex;              /* flex for centering */
+  flex-wrap: wrap;            /* wrap to new rows */
+  justify-content: center;    /* horizontal center */
+  gap: 1.8rem;                /* space between pet cards */
   list-style: none;
   padding: 0;
 }
@@ -99,8 +99,8 @@ header nav a:hover {
 /* Pet Card */
 .pet-list li {
   position: relative;
-  width: 220px;              /* slightly larger */
-  aspect-ratio: 1 / 1;       /* square shape */
+  width: 220px;               /* larger squares */
+  aspect-ratio: 1 / 1;        /* maintain square shape */
   background: linear-gradient(135deg, #f0f7ff, #ffffff);
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -119,7 +119,8 @@ header nav a:hover {
 .pet-list img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;        /* fill container without distortion */
+  object-position: center;  /* center image if cropped */
   display: block;
 }
 
