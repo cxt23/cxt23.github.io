@@ -13,162 +13,87 @@ body {
   background: #cfe0f7; /* soft medium blue for overall page */
 }
 
+/* Container */
 .container {
   width: 90%;
   max-width: 1200px;
-  margin: auto;
-  padding: 2rem 0;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
 /* Header */
 header {
-  background: linear-gradient(135deg, #3a7bd5, #00d2ff);
-  color: #fff;
-  padding: 2.5rem 1rem;
   text-align: center;
-  border-bottom: 6px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 50px 0;
+  background: linear-gradient(to right, #1e3c72, #2a5298); /* gradient shades of blue */
+  color: white;
 }
 
-header h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
-}
-
-header nav {
-  margin-top: 1rem;
-}
-
-header nav a {
-  margin: 0 1.2rem;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-}
-
-header nav a:hover {
-  color: #fffb9a;
-}
-
-/* Sections */
-.section {
-  padding: 4rem 0;
-}
-
-.section.alt {
-  background: #5a8fd8; /* medium blue */
-  color: #fff;
-  border-top: 1px solid #4672b8;
-  border-bottom: 1px solid #4672b8;
-}
-
-/* Headings */
-.section h2 {
-  margin-bottom: 1.5rem;
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #fff;
+/* About Section */
+#about {
   text-align: center;
-  position: relative;
+  padding: 50px 0;
+  font-size: 1.2rem;
 }
 
-.section h2::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 4px;
-  margin: 0.5rem auto 0;
-  background: linear-gradient(90deg, #3a7bd5, #00d2ff);
-  border-radius: 2px;
+/* Pets Section */
+#pets {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* first row 5 columns */
+  gap: 20px;
+  padding: 50px 0;
 }
 
-/* Pet Grid */
-.pet-list {
-  display: flex;              /* flex for centering */
-  flex-wrap: wrap;            /* wrap to new rows */
-  justify-content: center;    /* horizontal center */
-  gap: 1.8rem;                /* space between pet cards */
-  list-style: none;
-  padding: 0;
-}
-
-/* Pet Card */
-.pet-list li {
-  position: relative;
-  width: 220px;               /* larger squares */
-  aspect-ratio: 1 / 1;        /* maintain square shape */
-  background: linear-gradient(135deg, #f0f7ff, #ffffff);
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  border: 2px solid transparent;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-  overflow: hidden;
-}
-
-.pet-list li:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  border: 2px solid #daa520;
-}
-
-/* Pet Image */
-.pet-list img {
+#pets .pet {
   width: 100%;
-  height: 100%;
-  object-fit: cover;        /* fill container without distortion */
-  object-position: center;  /* center image if cropped */
-  display: block;
-}
-
-/* Pet Name Overlay */
-.pet-list h3 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.85);
-  margin: 0;
-  padding: 0.4rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #1e4d8a;
-  text-align: center;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  background: linear-gradient(135deg, #3a7bd5, #00d2ff);
-  color: #fff;
-  padding: 1.5rem 0;
-  margin-top: 3rem;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-}
-
-/* About Me & Contact Sections */
-.about-me,
-.contact {
+  height: 200px; /* fixed height for each pet box */
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   text-align: center;
-  padding: 3rem 2rem;
-  max-width: 700px;
-  margin: 2rem auto;
-  background: #5a8fd8; /* medium blue */
-  color: #fff;
-  border-radius: 12px;
+  flex-direction: column;
 }
 
-.about-me p,
-.contact p {
-  margin-top: 1rem;
+#pets .pet img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures the image fills the box without distortion */
+  object-position: center;
+}
+
+/* Pet names below the images */
+#pets .pet p {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+/* Contact Section */
+#contact {
+  text-align: center;
+  padding: 50px 0;
+  background: #e6f0fa;
   font-size: 1.1rem;
-  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  #pets {
+    grid-template-columns: repeat(4, 1fr); /* adjust for smaller screens */
+  }
+}
+
+@media (max-width: 900px) {
+  #pets {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #pets {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
