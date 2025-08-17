@@ -10,7 +10,7 @@ body {
   font-family: 'Poppins', 'Segoe UI', sans-serif;
   line-height: 1.7;
   color: #222;
-  background: linear-gradient(180deg, #e0f0ff, #f7fbff); /* soft blue tint */
+  background: #cfe0f7; /* soft medium blue for overall page */
 }
 
 .container {
@@ -60,16 +60,18 @@ header nav a:hover {
 }
 
 .section.alt {
-  background: #e6f0ff; /* soft light blue background */
-  border-top: 1px solid #d0e0f5;
-  border-bottom: 1px solid #d0e0f5;
+  background: #5a8fd8; /* medium blue */
+  color: #fff;
+  border-top: 1px solid #4672b8;
+  border-bottom: 1px solid #4672b8;
 }
 
+/* Headings */
 .section h2 {
   margin-bottom: 1.5rem;
   font-size: 2.4rem;
   font-weight: 700;
-  color: #3a7bd5;
+  color: #fff;
   text-align: center;
   position: relative;
 }
@@ -97,13 +99,13 @@ header nav a:hover {
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
   position: relative;
-  border: 2px solid transparent; /* for glow effect */
+  border: 2px solid transparent;
 }
 
 .pet-list li:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  border: 2px solid #daa520; /* golden glow */
+  border: 2px solid #daa520;
 }
 
 /* Paw icon */
@@ -113,7 +115,7 @@ header nav a:hover {
   font-weight: 600;
   color: #1e4d8a;
   position: relative;
-  padding-left: 2rem; /* space for paw */
+  padding-left: 2rem;
 }
 
 .pet-list h3::before {
@@ -126,14 +128,13 @@ header nav a:hover {
   transition: color 0.3s ease;
 }
 
-/* Gold paw on hover */
 .pet-list li:hover h3::before {
-  color: #daa520; /* goldenrod */
+  color: #daa520;
 }
 
 .pet-list p {
   color: #444;
-  padding-top: 0.2rem; /* small spacing for readability */
+  padding-top: 0.2rem;
 }
 
 /* Footer */
@@ -147,13 +148,20 @@ footer {
   letter-spacing: 0.5px;
 }
 
-/* Center text in About Me and Contact sections */
+/* About Me & Contact Sections */
 .about-me,
 .contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 3rem 2rem;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 2rem auto;
+  background: #5a8fd8; /* medium blue */
+  color: #fff;
+  border-radius: 12px;
 }
 
 .about-me p,
@@ -161,5 +169,4 @@ footer {
   margin-top: 1rem;
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #333;
 }
