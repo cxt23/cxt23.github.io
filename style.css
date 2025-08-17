@@ -15,7 +15,7 @@ body {
 
 .container {
   width: 90%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: auto;
   padding: 2rem 0;
 }
@@ -89,53 +89,55 @@ header nav a:hover {
 /* Pet Grid */
 .pet-list {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* first row 5 across */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
   list-style: none;
   justify-items: center;
   padding: 0;
 }
 
-/* second row with 4 across */
-.pet-list.second-row {
-  grid-template-columns: repeat(4, 1fr);
-}
-
 /* Pet Card */
 .pet-list li {
-  width: 300px;        /* ~3 inches wide */
-  height: 300px;       /* ~3 inches tall */
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;       /* ensures square shape */
+  max-width: 300px;          /* don’t get too huge */
   background: linear-gradient(135deg, #f0f7ff, #ffffff);
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   border: 2px solid transparent;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  overflow: hidden;
+}
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  overflow: hidden; /* keeps photo inside box */
+.pet-list li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  border: 2px solid #daa520;
 }
 
 /* Pet Image */
 .pet-list img {
   width: 100%;
-  height: 80%;         /* fill most of box */
-  object-fit: cover;   /* crop neatly */
-  border-radius: 10px 10px 0 0;
+  height: 100%;
+  object-fit: cover; /* crops image neatly */
+  display: block;
 }
 
-/* Pet Name */
+/* Pet Name Overlay */
 .pet-list h3 {
-  margin: 0.3rem 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  padding: 0.4rem;
   font-size: 1rem;
   font-weight: 600;
   color: #1e4d8a;
   text-align: center;
 }
-
-
 
 /* Footer */
 footer {
