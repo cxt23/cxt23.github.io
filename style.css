@@ -7,7 +7,8 @@
 
 /* General Styles */
 body {
-  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-family: Helvitica;
+  font-size: 16px;
   line-height: 1.7;
   color: #222;
   background: #cfe0f7; /* soft medium blue for overall page */
